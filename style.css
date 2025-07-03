@@ -1,0 +1,614 @@
+/* General Body Styles */
+body {
+    font-family: 'Georgia', serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fcfcf4; /* Very light cream/green tint for background */
+    color: #333;
+    line-height: 1.6;
+    scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header Section */
+header {
+    background-color: #e8f5e9; /* Light sage green for header */
+    padding: 20px 0;
+    border-bottom: 2px solid #a5d6a7; /* Darker sage green border */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    overflow: hidden; /* Hide overflowing leaf elements */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* Leaf decorations in header */
+header::before,
+header::after {
+    content: '';
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 0.5;
+    z-index: 0;
+}
+
+header::before {
+    background-image: url('https://i.imgur.com/Q2rRzKk.png'); /* Placeholder: A subtle leaf branch top-left */
+    top: -50px;
+    left: -50px;
+    transform: rotate(15deg);
+}
+
+header::after {
+    background-image: url('https://i.imgur.com/e2o8g67.png'); /* Placeholder: A subtle leaf branch bottom-right */
+    bottom: -50px;
+    right: -50px;
+    transform: rotate(-25deg);
+}
+
+/* Logo and Site Title Styling */
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Align logo to the right */
+    position: relative;
+    z-index: 1; /* Ensure logo is above pseudo-elements */
+    padding-right: 20px; /* Space from right edge */
+}
+
+.logo-container img {
+    border-radius: 50%; /* Make the logo circular */
+    width: 90px; /* Adjust size as needed */
+    height: 90px;
+    object-fit: cover;
+    border: 3px solid #81c784; /* Sage green border around logo */
+    box-shadow: 0 0 15px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+}
+
+.logo-container img:hover {
+    transform: scale(1.05);
+}
+
+.site-title {
+    font-family: 'Georgia', serif;
+    font-size: 2.8em;
+    color: #388e3c; /* Darker sage green for title */
+    text-align: center;
+    flex-grow: 1; /* Allows title to take available space */
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+    z-index: 1; /* Ensure title is above pseudo-elements */
+}
+
+/* Navigation Menu */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-start; /* Align navigation to the left */
+    position: absolute; /* Position relative to header */
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1; /* Ensure nav is above pseudo-elements */
+}
+
+nav ul li {
+    margin-right: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #43a047; /* Sage green for navigation links */
+    font-weight: bold;
+    font-size: 1.2em;
+    padding: 8px 0;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background-color: #81c784; /* Sage green underline on hover */
+    left: 0;
+    bottom: -5px;
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+nav ul li a:hover {
+    color: #66bb6a; /* Lighter sage green on hover */
+}
+
+/* Section Styling */
+section {
+    padding: 80px 0;
+    background-color: #fff;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle leaf background for general sections */
+section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://i.imgur.com/example_subtle_leaf_pattern.png'); /* Placeholder: A very subtle repeating leaf pattern */
+    background-repeat: repeat;
+    background-size: 150px;
+    opacity: 0.03; /* Very faint */
+    z-index: 0;
+    pointer-events: none; /* Allows clicks to pass through */
+}
+
+
+section.hero {
+    background-color: #c8e6c9; /* Muted sage green for hero */
+    text-align: center;
+    padding: 100px 0;
+    margin-top: -25px; /* Adjust to connect with header */
+    border-radius: 0 0 12px 12px; /* Rounded bottom corners */
+    box-shadow: none;
+    background-image: url('https://i.imgur.com/hero_leaf_bg.png'); /* Placeholder: A more prominent leaf background for hero */
+    background-size: cover;
+    background-position: center;
+    color: #2e7d32; /* Dark green for hero text */
+    position: relative;
+    z-index: 1; /* Ensure hero content is above any background effects */
+}
+
+section.hero h1 {
+    font-size: 3.8em;
+    margin-bottom: 20px;
+    color: #2e7d32;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+section.hero p {
+    font-size: 1.5em;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #4caf50; /* Lighter green for hero paragraph */
+    line-height: 1.8;
+}
+
+/* Headings */
+h2 {
+    font-size: 3em;
+    color: #388e3c; /* Darker sage green */
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative;
+    font-weight: bold;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 4px;
+    background-color: #81c784; /* Sage green underline */
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -15px;
+    border-radius: 2px;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #e8f5e9; /* Same as header, light sage green */
+    color: #43a047;
+    text-align: center;
+    padding: 40px 0;
+    margin-top: 50px;
+    border-top: 2px solid #a5d6a7;
+    font-size: 1em;
+    position: relative;
+    overflow: hidden;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: -30px;
+    left: -30px;
+    width: 100px;
+    height: 100px;
+    background: url('https://i.imgur.com/footer_leaf_left.png') no-repeat center center; /* Placeholder for footer leaf */
+    background-size: contain;
+    opacity: 0.4;
+    transform: rotate(20deg);
+}
+
+footer::after {
+    content: '';
+    position: absolute;
+    bottom: -30px;
+    right: -30px;
+    width: 100px;
+    height: 100px;
+    background: url('https://i.imgur.com/footer_leaf_right.png') no-repeat center center; /* Placeholder for footer leaf */
+    background-size: contain;
+    opacity: 0.4;
+    transform: rotate(-30deg);
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+footer a {
+    color: #66bb6a;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #388e3c;
+    text-decoration: underline;
+}
+
+/* Content Blocks (for image and text layout) */
+.content-block {
+    display: flex;
+    align-items: center; /* Align items vertically in the middle */
+    margin-bottom: 60px;
+    gap: 40px;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    padding: 20px;
+    background-color: #fafff8; /* Very light background for content blocks */
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+}
+
+.content-block img {
+    width: 450px; /* Larger image size */
+    height: 300px; /* Fixed height for consistency */
+    object-fit: cover; /* Crop image to fit */
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.content-block img:hover {
+    transform: translateY(-5px);
+}
+
+.text-content {
+    flex: 1; /* Allow text to take remaining space */
+    min-width: 300px; /* Ensure text content doesn't get too narrow */
+}
+
+.text-content p {
+    margin-bottom: 18px;
+    color: #555;
+    font-size: 1.15em;
+    line-height: 1.7;
+}
+
+.text-content strong {
+    color: #388e3c; /* Darker sage green for strong text */
+}
+
+/* Bullet List for Values/Work */
+.bullet-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.bullet-list li {
+    position: relative;
+    padding-left: 40px; /* Space for the icon */
+    margin-bottom: 20px;
+    font-size: 1.1em;
+    color: #444;
+}
+
+.bullet-list li::before {
+    content: '🌿'; /* Leaf emoji */
+    position: absolute;
+    left: 0;
+    color: #66bb6a; /* Sage green for icon */
+    font-size: 1.5em;
+    top: 50%;
+    transform: translateY(-50%);
+    line-height: 1; /* Prevent vertical misalignment */
+}
+
+/* Our Work Specific Styling */
+.work-item {
+    display: flex;
+    align-items: flex-start; /* Align items to the top */
+    margin-bottom: 60px;
+    background-color: #f8fdf8; /* Very light green for work items */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.07);
+    border-left: 6px solid #81c784; /* Accent border */
+    position: relative;
+    overflow: hidden;
+}
+
+.work-item:nth-child(even) {
+    flex-direction: row-reverse; /* Alternate image and text for even items */
+    border-right: 6px solid #81c784;
+    border-left: none;
+}
+
+.work-item img {
+    width: 300px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin: 0 30px; /* Margin around the image */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.work-item img:hover {
+    transform: scale(1.02);
+}
+
+.work-item .text-content {
+    flex: 1;
+    z-index: 1; /* Ensure text is above any internal pseudo-elements */
+}
+
+.work-item h3 {
+    color: #388e3c; /* Darker sage green */
+    font-size: 2em;
+    margin-top: 0;
+    margin-bottom: 15px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.work-item h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 60px;
+    height: 2px;
+    background-color: #a5d6a7;
+    border-radius: 1px;
+}
+
+.work-item:nth-child(even) h3::after {
+    left: auto;
+    right: 0;
+}
+
+.work-item p {
+    color: #555;
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+/* Contact Form Styling */
+.contact-form {
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: #fcfcf4; /* Light background for form */
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+    border: 1px solid #c8e6c9; /* Light sage green border */
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #43a047; /* Sage green for labels */
+    font-size: 1.1em;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: calc(100% - 24px); /* Account for padding and border */
+    padding: 12px;
+    margin-bottom: 25px;
+    border: 1px solid #a5d6a7; /* Sage green border for inputs */
+    border-radius: 8px;
+    font-size: 1em;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #66bb6a; /* Darker sage green on focus */
+    box-shadow: 0 0 8px rgba(102, 187, 106, 0.4);
+    outline: none;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+.contact-form button {
+    background-color: #66bb6a; /* Sage green button */
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: block; /* Make button full width */
+    width: 100%;
+}
+
+.contact-form button:hover {
+    background-color: #43a047; /* Darker sage green on hover */
+    transform: translateY(-2px);
+}
+
+.contact-info {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 1.2em;
+    color: #555;
+    background-color: #e8f5e9;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+}
+
+.contact-info p {
+    margin-bottom: 15px;
+}
+
+.contact-info a {
+    color: #66bb6a;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+    color: #388e3c;
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .site-title {
+        font-size: 2.2em;
+    }
+    nav ul li {
+        margin-right: 20px;
+    }
+    nav ul li a {
+        font-size: 1em;
+    }
+    .content-block img {
+        width: 100%;
+        max-width: 400px; /* Limit image width on smaller screens */
+        margin-bottom: 30px;
+    }
+    .content-block {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    .work-item {
+        flex-direction: column;
+        align-items: center;
+    }
+    .work-item:nth-child(even) {
+        flex-direction: column;
+    }
+    .work-item img {
+        margin: 0 0 20px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+        padding-bottom: 0;
+    }
+    .site-title {
+        margin-top: 15px;
+        font-size: 2em;
+    }
+    .logo-container {
+        justify-content: center;
+        margin-top: 15px;
+        padding-right: 0;
+    }
+    nav ul {
+        position: static;
+        transform: none;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 25px;
+        padding-bottom: 15px;
+        border-top: 1px solid #a5d6a7;
+        width: 100%;
+    }
+    nav ul li {
+        margin: 0 10px 10px 10px;
+    }
+    h2 {
+        font-size: 2.5em;
+    }
+    section.hero h1 {
+        font-size: 3em;
+    }
+    section.hero p {
+        font-size: 1.2em;
+    }
+    .contact-form {
+        padding: 30px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .site-title {
+        font-size: 1.8em;
+    }
+    .logo-container img {
+        width: 70px;
+        height: 70px;
+    }
+    h2 {
+        font-size: 2em;
+        margin-bottom: 40px;
+    }
+    section.hero h1 {
+        font-size: 2.5em;
+    }
+    section.hero p {
+        font-size: 1em;
+    }
+    .text-content p {
+        font-size: 1em;
+    }
+    .bullet-list li {
+        font-size: 1em;
+        padding-left: 35px;
+    }
+    .bullet-list li::before {
+        font-size: 1.3em;
+    }
+    .work-item h3 {
+        font-size: 1.6em;
+    }
+    .work-item p {
+        font-size: 0.95em;
+    }
+}
