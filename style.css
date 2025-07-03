@@ -41,12 +41,8 @@ header::after {
     z-index: 0;
 }
 
-header::before {
-    background-image: url('https://i.imgur.com/Q2rRzKk.png'); /* Placeholder: A subtle leaf branch top-left */
-    top: -50px;
-    left: -50px;
-    transform: rotate(15deg);
-}
+
+
 
 
 /* Logo and Site Title Styling */
