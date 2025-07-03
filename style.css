@@ -48,12 +48,6 @@ header::before {
     transform: rotate(15deg);
 }
 
-header::after {
-    background-image: url('https://i.imgur.com/e2o8g67.png'); /* Placeholder: A subtle leaf branch bottom-right */
-    bottom: -50px;
-    right: -50px;
-    transform: rotate(-25deg);
-}
 
 /* Logo and Site Title Styling */
 .logo-container {
@@ -81,7 +75,7 @@ header::after {
 
 .site-title {
     font-family: 'Georgia', serif;
-    font-size: 2.0em;
+    font-size: 2.8em;
     color: #388e3c; /* Darker sage green for title */
     text-align: center;
     flex-grow: 1; /* Allows title to take available space */
@@ -99,7 +93,7 @@ nav ul {
     display: flex;
     justify-content: flex-start; /* Align navigation to the left */
     position: absolute; /* Position relative to header */
-    left: 20px;
+    left: 30px;
     top: 50%;
     transform: translateY(-50%);
     z-index: 1; /* Ensure nav is above pseudo-elements */
@@ -125,7 +119,7 @@ nav ul li a::after {
     width: 0;
     height: 3px;
     background-color: #81c784; /* Sage green underline on hover */
-    left: 0;
+    left: 2;
     bottom: -5px;
     transition: width 0.3s ease;
 }
